@@ -85,7 +85,11 @@
                             <stripVersion>false</stripVersion>
                             <!--包含范围-->
                             <includeScope>runtime</includeScope>
+
+                            <excludeGroupIds>com.zdx</excludeGroupIds>
+                            <excludeArtifactIds>common</excludeArtifactIds>
                         </configuration>
+
                     </execution>
                 </executions>
             </plugin>

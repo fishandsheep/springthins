@@ -9,11 +9,7 @@ public class MyController {
 
     @GetMapping("/thin")
     public Student thin() {
-        return Student.builder()
-                .name("zdx")
-                .age(18)
-                .build();
+        return new Student("zdx", 18);
     }
-
 
 }
