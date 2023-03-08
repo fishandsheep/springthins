@@ -6,18 +6,20 @@
 java -Dloader.path=lib -jar  springthin-0.0.1-SNAPSHOT.jar
 ```
 
-1. [x] 方案1，CI/CD时，手动删除指定jar包
-2. [x] 方案2，在 `maven-dependency-plugin` 插件`configuration`中添加排除配置：
+- [x] 方案1，CI/CD时，脚本删除指定jar包
+
+- [x] 方案2，在 `maven-dependency-plugin` 插件`configuration`中添加排除配置：
     ```xml
         <excludeGroupIds>com.zdx</excludeGroupIds>
         <!--<excludeArtifactIds>common</excludeArtifactIds>-->
     ```
-3. -[] 方案3，使用 `spring-boot-thin-layout` 插件，会在当前目录下下载`lib/repository`文件夹, 需要和 `maven-dependency-plugin` 插件配合
+    
+- [ ] 方案3，使用 `spring-boot-thin-layout` 插件，会在当前目录下下载`lib/repository`文件夹, 需要和 `maven-dependency-plugin` 插件配合
 ```shell
 java -Dthin.root=. -jar app/target/*.jar
 ```
 
-- 方案4，`**`maven-jar-plugin` 启动可以不指定参数，但无法多模块打包
+- [x] 方案4，`maven-jar-plugin` 启动可以不指定参数，但无法多模块打包
 
 #### 扩展知
 
@@ -44,3 +46,6 @@ Spring Boot 应用程序加载器来加载应用程序和依赖项，则需要�
 _一般来说，-Djava.ext.dirs 已经被弃用，不再是一个推荐的选项。相反，建议使用 Maven 等构建工具来管理依赖项和库的路径，或者使用类似于
 Docker 容器的隔离机制来隔离应用程序和依赖项的运行环境。-Dloader.path 是针对 Spring Boot 应用程序而设计的，如果您使用
 Spring Boot，则应该使用该属性来管理应用程序的依赖项和类路径。_
+
+- [ ] 1
+- [ ] 2
