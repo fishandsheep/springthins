@@ -21,7 +21,7 @@ java -Dthin.root=. -jar app/target/*.jar
 
 - [x] 方案4，`maven-jar-plugin` 启动可以不指定参数，但无法多模块打包
 
-#### 扩展知
+#### 扩展
 
 ```shell
 java -Djava.ext.dirs=lib -jar  springthin-0.0.1-SNAPSHOT.jar
