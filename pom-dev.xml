@@ -162,6 +162,44 @@
                     </execution>
                 </executions>
             </plugin>
+                 
+               <!-- 最终解决方案 父项目引入下面的依赖 -->  
+                <!--         <dependency>
+                              <groupId>com.lyzdfintech.sql</groupId>
+                              <artifactId>spring-boot-p6spy-starter</artifactId>
+                              <version>1.0-SNAPSHOT</version>
+                              <classifier>jar-with-dependencies</classifier>
+                          </dependency>
+                 --> 
+                 <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <shadedArtifactAttached>true</shadedArtifactAttached>
+                    <shadedClassifierName>jar-with-dependencies</shadedClassifierName>
+                    <finalName>p6spy-starter</finalName>
+                    <artifactSet>
+                        <excludes>
+                            <exclude>org.springframework.boot:*</exclude>
+                            <exclude>org.springframework:*</exclude>
+                            <exclude>ch.qos.logback:*</exclude>
+                            <exclude>org.slf4j:*</exclude>
+                            <exclude>org.apache.logging.log4j:*</exclude>
+                            <exclude>jakarta.annotation:*</exclude>
+                            <exclude>org.yaml:*</exclude>
+                        </excludes>
+                    </artifactSet>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
