@@ -200,6 +200,26 @@
                     </artifactSet>
                 </configuration>
             </plugin>
+                 
+                     <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>p6spy-starter</finalName>
+                    <layout>ZIP</layout>
+                    <executable>false</executable>
+                    <includes>
+                        <include>
+                            <groupId>cn.hutool</groupId>
+                            <artifactId>hutool-core</artifactId>
+                        </include>
+                        <include>
+                            <groupId>p6spy</groupId>
+                            <artifactId>p6spy</artifactId>
+                        </include>
+                    </includes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
