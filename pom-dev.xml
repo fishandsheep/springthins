@@ -119,7 +119,49 @@
                     </includes>
                 </configuration>
             </plugin>
+            
+              <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <finalName>p6spy-starter</finalName>
+                    <artifactSet>
+                        <excludes>
+                            <exclude>org.springframework.boot:*</exclude>
+                            <exclude>org.springframework:*</exclude>
+                            <exclude>ch.qos.logback:*</exclude>
+                            <exclude>org.slf4j:*</exclude>
+                            <exclude>org.apache.logging.log4j:*</exclude>
+                            <exclude>jakarta.annotation:*</exclude>
+                            <exclude>org.yaml:*</exclude>
+                        </excludes>
+                    </artifactSet>
+                </configuration>
+            </plugin>-->
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>jar-with-dependencies</descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
